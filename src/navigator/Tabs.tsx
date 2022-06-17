@@ -3,9 +3,13 @@ import React from 'react'
 import { Platform } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { SearchScreen } from '../screens/SearchScreen';
-import { Navigator } from './Navigator';
+import { Navigator, RootStackParams } from './Navigator';
+import { createStackNavigator } from '@react-navigation/stack';
+import { PokemonScreen } from '../screens/PokemonScreen';
+import { Tab2Screen } from './Tab2';
 
 const Tab = createBottomTabNavigator();
+
 
 export const Tabs = () => {
     
@@ -47,7 +51,7 @@ export const Tabs = () => {
             />
             <Tab.Screen 
                 name="SearchScreen" 
-                component={SearchScreen} 
+                component={Tab2Screen} 
                 options={{
                     tabBarLabel: "Buscar",
                     tabBarIcon: ({color}) => (
